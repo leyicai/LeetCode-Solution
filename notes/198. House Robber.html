@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>198. House Robber</title>
+  <basefont face="Segoe UI" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="YXBJ Windows/600753 (en-US, DDL); Windows/10.0.0 (Win64);"/>
+  <meta name="content-class" content="maxiang"/>
+  <style>
+    body, td {
+      font-family: Segoe UI;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="750"/>
+<h1>198. House Robber</h1>
+<div>
+<table bgcolor="#D4DDE5" border="0">
+<tr><td><b>Tags:</b></td><td><i>DP</i></td></tr>
+</table>
+</div>
+<br/>
+
+<div><span lang="v2" style="color: #2c3f51; font-family: Candara, Microsoft Yahei, 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif; font-size: 15px; line-height: 1.6; background: none;"><del style="position:relative;display:block;z-index:10;"><a href="http://maxiang.io/#/?provider=evernote&amp;guid=5421414f-a27e-412b-821b-3ece8db981e2&amp;notebook=LeetCode" style="position: absolute;color: #FFF;text-decoration: none;font-size: 12px;height: 25px;border-radius: 0;margin-top: -20px;right: 15px;background: rgba(0, 0, 0, 0);border-left: 10px solid #BB3A34;border-right: 10px solid #BB3A34;border-bottom: 5px solid rgba(0, 0, 0, 0);width: 0;text-indent:-100000px;">Edit</a></del><div style="color: #3e3e3e; font-family: Candara, Microsoft Yahei, 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif; font-size: 15px; line-height: 1.6;">
+                        
+                    
+
+
+
+<h1 style="margin-top: 21px; font-family: inherit; margin-bottom: 10.5px; color: #3e3e3e; font-weight: bold; line-height: 1.2; margin: 20px 0; text-align: left; padding-left: 15px; word-break: break-all; font-size: 32px; border-left: 8px solid #71BA51;">198. House Robber</h1>
+
+<p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;"></p>
+
+<p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;"><strong style="font-weight: bold; line-height: 1.6; color: #FD5B03;">cannot rob consecutive houses</strong> <br style="color: #3e3e3e;"/>
+dp[0] = 0; <br style="color: #3e3e3e;"/>
+dp[1] = nums[0]; <br style="color: #3e3e3e;"/>
+dp[i] = max(dp[i - 1], dp[i - 2] + nums[i])</p>
+
+<ul style="margin-top: 0; margin-bottom: 1.1em; color: #3e3e3e; padding-left: 30px; line-height: 1.6;"><li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">recursive top-down dp: </p>
+
+<pre style="font-family: 'Source Code Pro',Consolas,monospace; white-space: pre-wrap; display: block; word-wrap: break-word; padding: 12px 13px; margin: 0 0 1.1em; line-height: 1.6; word-break: break-all; font-size: 13px; color: #898989; background-color: #f8f8f8; border: 0; border-radius: 3px; text-align: start; position: relative; background: #f2f2f2;"><code style="font-family: 'Source Code Pro',Consolas,monospace; white-space: pre-wrap; border-radius: 0; font-size: inherit; background-color: transparent; color: #333; display: block; overflow-x: auto; background: #f8f8f8; padding: 1.3em 2em; padding-left: 3.3em;"><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">1.</span>return max(<span style="display: inline; line-height: 1.6; color: #000080; font-weight: normal; background-color: transparent;">rob</span>(<span style="display: inline; line-height: 1.6; color: #000080; font-weight: normal; background-color: transparent;">nums</span>, i - <span style="display: inline; line-height: 1.6; color: #008080; background-color: transparent;">2</span>) + nums[i], rob(<span style="display: inline; line-height: 1.6; color: #000080; font-weight: normal; background-color: transparent;">nums</span>, i - <span style="display: inline; line-height: 1.6; color: #008080; background-color: transparent;">1</span>))<span style="display: inline; line-height: 1.6; color: #998; font-style: italic; background-color: transparent;">;</span>
+</div></code></pre></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">Other Solution</p>
+
+<ul style="margin-top: 0; margin-bottom: .55em; color: #3e3e3e; padding-left: 30px; line-height: 1.6;">
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">With two variables: even houses and odd houses</p>
+
+<pre style="font-family: 'Source Code Pro',Consolas,monospace; white-space: pre-wrap; display: block; word-wrap: break-word; padding: 12px 13px; margin: 0 0 1.1em; line-height: 1.6; word-break: break-all; font-size: 13px; color: #898989; background-color: #f8f8f8; border: 0; border-radius: 3px; text-align: start; position: relative; background: #f2f2f2;"><code style="font-family: 'Source Code Pro',Consolas,monospace; white-space: pre-wrap; border-radius: 0; font-size: inherit; background-color: transparent; color: #333; display: block; overflow-x: auto; background: #f8f8f8; padding: 1.3em 2em; padding-left: 3.3em;"><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">1.</span><span style="display: inline; line-height: 1.6; color: #333; font-weight: bold; background-color: transparent;">for</span> (<span style="display: inline; line-height: 1.6; color: #333; font-weight: bold; background-color: transparent;">int</span> i = <span style="display: inline; line-height: 1.6; color: #008080; background-color: transparent;">0</span>; i &lt; nums.size(); i++) {
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">2.</span>    <span style="display: inline; line-height: 1.6; color: #333; font-weight: bold; background-color: transparent;">if</span> (i % <span style="display: inline; line-height: 1.6; color: #008080; background-color: transparent;">2</span> == <span style="display: inline; line-height: 1.6; color: #008080; background-color: transparent;">0</span>) {
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">3.</span>        a = max(a + nums[i], b);
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">4.</span>    }
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">5.</span>    <span style="display: inline; line-height: 1.6; color: #333; font-weight: bold; background-color: transparent;">else</span> {
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">6.</span>        b = max(a, b + nums[i]);
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">7.</span>    }
+</div><div style="min-height: 1.5em; color: #3e3e3e; line-height: 1.6; background-color: transparent;"><span style="line-height: 1.6; color: #998; font-style: italic; min-width: 2.2em; display: inline-block; text-align: right; opacity: .8; position: absolute; left: .3em; background-color: transparent;">8.</span>}
+</div></code></pre></li></ul></li>
+</ul></div><center style="display:none !important;visibility:collapse !important;height:0 !important;white-space:nowrap;width:100%;overflow:hidden">%23%20198.%20House%20Robber%0A@%28LeetCode%29%5BDP%5D%0A%20%0A**cannot%20rob%20consecutive%20houses**%0Adp%5B0%5D%20%3D%200%3B%0Adp%5B1%5D%20%3D%20nums%5B0%5D%3B%0Adp%5Bi%5D%20%3D%20max%28dp%5Bi%20-%201%5D%2C%20dp%5Bi%20-%202%5D%20+%20nums%5Bi%5D%29%0A%0A-%20recursive%20top-down%20dp%3A%20%0A%20%20%60%60%60%0A%20%20return%20max%28rob%28nums%2C%20i%20-%202%29%20+%20nums%5Bi%5D%2C%20rob%28nums%2C%20i%20-%201%29%29%3B%0A%20%20%60%60%60%0A-%20Other%20Solution%0A%09-%20With%20two%20variables%3A%20even%20houses%20and%20odd%20houses%0A%09%60%60%60cpp%0A%09for%20%28int%20i%20%3D%200%3B%20i%20%3C%20nums.size%28%29%3B%20i++%29%20%7B%0A%09%09if%20%28i%20%25%202%20%3D%3D%200%29%20%7B%0A%09%09%09a%20%3D%20max%28a%20+%20nums%5Bi%5D%2C%20b%29%3B%0A%09%09%7D%0A%09%09else%20%7B%0A%09%09%09b%20%3D%20max%28a%2C%20b%20+%20nums%5Bi%5D%29%3B%0A%09%09%7D%0A%09%7D%0A%09%60%60%60</center><br/></span>
+</div></body></html> 

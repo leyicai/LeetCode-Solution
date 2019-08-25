@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>44. Wildcard Matching</title>
+  <basefont face="Segoe UI" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="YXBJ Windows/600753 (en-US, DDL); Windows/10.0.0 (Win64);"/>
+  <meta name="content-class" content="maxiang"/>
+  <style>
+    body, td {
+      font-family: Segoe UI;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="753"/>
+<h1>44. Wildcard Matching</h1>
+<div>
+<table bgcolor="#D4DDE5" border="0">
+<tr><td><b>Tags:</b></td><td><i>DP</i></td></tr>
+</table>
+</div>
+<br/>
+
+<div><span lang="v2" style="color: #2c3f51; font-family: Candara, Microsoft Yahei, 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif; font-size: 15px; line-height: 1.6; background: none;"><del style="position:relative;display:block;z-index:10;"><a href="http://maxiang.io/#/?provider=evernote&amp;guid=489a24df-3687-4b5b-bde4-0b3a4084579d&amp;notebook=LeetCode" style="position: absolute;color: #FFF;text-decoration: none;font-size: 12px;height: 25px;border-radius: 0;margin-top: -20px;right: 15px;background: rgba(0, 0, 0, 0);border-left: 10px solid #BB3A34;border-right: 10px solid #BB3A34;border-bottom: 5px solid rgba(0, 0, 0, 0);width: 0;text-indent:-100000px;">Edit</a></del><div style="color: #3e3e3e; font-family: Candara, Microsoft Yahei, 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, Song, sans-serif; font-size: 15px; line-height: 1.6;">
+                        
+                    
+
+<h1 style="margin-top: 21px; font-family: inherit; margin-bottom: 10.5px; color: #3e3e3e; font-weight: bold; line-height: 1.2; margin: 20px 0; text-align: left; padding-left: 15px; word-break: break-all; font-size: 32px; border-left: 8px solid #71BA51;">44. Wildcard Matching</h1>
+
+<p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;"> <br style="color: #3e3e3e;"/>
+<strong style="font-weight: bold; line-height: 1.6; color: #FD5B03;"><code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">?</code> matches a single char; <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">*</code> matches any sequence of char(can be empty)</strong></p>
+
+<ul style="margin-top: 0; margin-bottom: 1.1em; color: #3e3e3e; padding-left: 30px; line-height: 1.6;"><li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">Optimal Structure: dp[i][j] denotes status of  if <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">s[0:i]</code> matches <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">p[0:j]</code></p>
+
+<ul style="margin-top: 0; margin-bottom: .55em; color: #3e3e3e; padding-left: 30px; line-height: 1.6;">
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">if <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">s[i] == p[j] || p[j] == ?</code>: dp[i][j] = dp[i-1][j-1]</p></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">if <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">p[j] == *</code>: dp[i][j] = dp[i-1][j] // * as empty seq               || dp[i][j-1] // * as any seq</p></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">implementatoin: dp[i+1][j+q] denotes s[i]-p[j]. </p></li></ul></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">for i = 0 or j = 0: </p>
+
+<ul style="margin-top: 0; margin-bottom: .55em; color: #3e3e3e; padding-left: 30px; line-height: 1.6;">
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">dp[0][0] = <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">true</code>: empty s matches empty p</p></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">the 0th col is all <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">false</code>: empty p cannot match any s</p></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">the oth row: if p[j] == <code style="font-family: 'Source Code Pro',Consolas,monospace; font-size: .9em; padding: 2px 4px; background-color: #f9f2f4; white-space: normal; border-radius: 4px; color: #a71d5d;">*</code>, dp[0][j+1] = dp[0][j]</p></li></ul></li>
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">Optimization:</p>
+
+<ul style="margin-top: 0; margin-bottom: .55em; color: #3e3e3e; padding-left: 30px; line-height: 1.6;">
+<li style="color: #3e3e3e; line-height: 24px;"><p style="color: #3e3e3e; text-align: justify; margin: 6px 0; line-height: 1.2; min-height: 1em; box-sizing: border-box; word-wrap: break-word;">record dp[i][:] to compute dp[i+1]; space complexity could be O(n)</p></li></ul></li>
+</ul></div><center style="display:none !important;visibility:collapse !important;height:0 !important;white-space:nowrap;width:100%;overflow:hidden">%23%2044.%20Wildcard%20Matching%0A@%28LeetCode%29%5BDP%5D%0A**%60%3F%60%20matches%20a%20single%20char%3B%20%60*%60%20matches%20any%20sequence%20of%20char%28can%20be%20empty%29**%0A-%20Optimal%20Structure%3A%20dp%5Bi%5D%5Bj%5D%20denotes%20status%20of%20%20if%20%60s%5B0%3Ai%5D%60%20matches%20%60p%5B0%3Aj%5D%60%0A%09-%20if%20%60s%5Bi%5D%20%3D%3D%20p%5Bj%5D%20%7C%7C%20p%5Bj%5D%20%3D%3D%20%3F%60%3A%20dp%5Bi%5D%5Bj%5D%20%3D%20dp%5Bi-1%5D%5Bj-1%5D%0A%09-%20if%20%60p%5Bj%5D%20%3D%3D%20*%60%3A%20dp%5Bi%5D%5Bj%5D%20%3D%20dp%5Bi-1%5D%5Bj%5D%20//%20*%20as%20empty%20seq%09%20%20%20%20%20%20%20%20%20%20%20%20%7C%7C%20dp%5Bi%5D%5Bj-1%5D%20//%20*%20as%20any%20seq%0A%09-%20implementatoin%3A%20dp%5Bi+1%5D%5Bj+q%5D%20denotes%20s%5Bi%5D-p%5Bj%5D.%20%0A-%20for%20i%20%3D%200%20or%20j%20%3D%200%3A%20%0A%09-%20dp%5B0%5D%5B0%5D%20%3D%20%60true%60%3A%20empty%20s%20matches%20empty%20p%0A%09-%20the%200th%20col%20is%20all%20%60false%60%3A%20empty%20p%20cannot%20match%20any%20s%0A%09-%20the%20oth%20row%3A%20if%20p%5Bj%5D%20%3D%3D%20%60*%60%2C%20dp%5B0%5D%5Bj+1%5D%20%3D%20dp%5B0%5D%5Bj%5D%0A-%20Optimization%3A%0A%09-%20record%20dp%5Bi%5D%5B%3A%5D%20to%20compute%20dp%5Bi+1%5D%3B%20space%20complexity%20could%20be%20O%28n%29</center><br/></span>
+</div></body></html> 
